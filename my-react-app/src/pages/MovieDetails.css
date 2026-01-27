@@ -1,0 +1,56 @@
+.movie-details {
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.movie-wrapper {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.movie-poster {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.movie-info h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.movie-tag {
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.movie-overview {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.movie-genres span {
+  display: inline-block;
+  background: #222;
+  padding: 6px 12px;
+  border-radius: 15px;
+  margin-right: 8px;
+  font-size: 0.85rem;
+}
+
+.trailer-btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: red;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.trailer-btn:hover {
+  background: darkred;
+}

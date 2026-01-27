@@ -1,0 +1,23 @@
+.trailer-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: #0f0f0f;
+  min-height: 85vh;
+}
+
+.trailer-frame {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+.trailer-page p {
+  color: #aaa;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+}
