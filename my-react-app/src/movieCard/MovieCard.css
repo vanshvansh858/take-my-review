@@ -1,18 +1,69 @@
 .movie-card {
-  background: #1c1c1c;
-  color: white;
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  background: #141414;
+  border-radius: 14px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .movie-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-.card-link{
-  text-decoration: none;
-  color: inherit;
+.poster-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.poster-wrapper img[src*="placeholder"] {
+  object-fit: contain;
+  padding: 20px;
+  opacity: 0.85;
+}
+
+.movie-card:hover img {
+  transform: scale(1.1);
+}
+
+.rating-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.movie-info {
+  padding: 12px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+.movie-info h3 {
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.movie-info p {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  opacity: 0.7;
 }

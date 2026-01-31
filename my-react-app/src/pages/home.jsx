@@ -4,15 +4,15 @@ import useMovieList from "../hooks/useMovieList";
 import useLoading from "../hooks/useLoading";
 import LoadingSkeleton from "../comopents/loading";
 import MovieCard from "../movieCard/MovieCard";
-import useCategory from "../hooks/useCategory";
 import "./Homepage.css"
 
 function Home() {
-  const { search } = useOutletContext();
+  const { search , category} = useOutletContext();
   const { loading, setLoading } = useLoading();
   const { movies, setMovieList } = useMovieList([]);
-  const {category, setCategory} = useCategory()
-  console.log(category)
+  const loadingSkeleton = Array.from({ length: 8 });
+  console.l
+
   const CATEGORY_URLS = {
   popular: "https://api.themoviedb.org/3/movie/popular",
   top_rated: "https://api.themoviedb.org/3/movie/top_rated",
@@ -20,17 +20,23 @@ function Home() {
   trending: "https://api.themoviedb.org/3/trending/movie/week",
   };
   const url = CATEGORY_URLS[category];
-  console.log(url)
 
   useEffect(()=>{
+    if(!url) return
     async function categoryRender() {
       try{
-        const res = await fetch(url)
+        setLoading(true)
+        const res = await fetch(`${url}?api_key=cc2c5449ca6cedb1104dacd9a99edca5`)
+        const data = await res.json()
+        setMovieList(data.results)
       }catch(e){
         console.log(e)
+      }finally{
+        setLoading(false)
       }
     } categoryRender()
   },[category])
+
   useEffect(() => {
     if (!search) return;
 
@@ -56,8 +62,10 @@ function Home() {
     <div className="movie-list">
       {loading ? (
         <>
-          <LoadingSkeleton />
-          <LoadingSkeleton />
+          {loadingSkeleton.map(() => (
+            <LoadingSkeleton />
+          ))}
+          
         </>
       ) : (
         movies.map((movie) => (

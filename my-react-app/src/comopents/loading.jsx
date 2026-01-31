@@ -1,14 +1,14 @@
+import "./loading.css";
+
 function LoadingSkeleton() {
   return (
-    <div style={{
-        width: "200px",
-        height: "320px",
-        borderRadius: "10px",
-        background: "#e0e0e0",
-        margin: "10px",
-        animation: "pulse 1.5s infinite"
-      }}
-    ></div>
+    <div className="skeleton-card">
+      <div className="skeleton-poster shimmer"></div>
+      <div className="skeleton-info">
+        <div className="skeleton-title shimmer"></div>
+        <div className="skeleton-subtitle shimmer"></div>
+      </div>
+    </div>
   );
 }
 

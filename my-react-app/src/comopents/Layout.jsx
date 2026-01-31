@@ -12,7 +12,7 @@ function Layout() {
     <>
       <NavBar find={find} category={category} setCategory={fetch} />
       <div className="page-content">
-        <Outlet context={{ search }} />
+        <Outlet context={{ search, category }} />
       </div>
     </>
   );

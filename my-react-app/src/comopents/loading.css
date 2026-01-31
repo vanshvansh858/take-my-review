@@ -1,0 +1,58 @@
+.skeleton-card {
+  background: #141414;
+  border-radius: 14px;
+  overflow: hidden;
+  width: 180px;
+}
+
+.skeleton-poster {
+  height: 270px;
+  background: #222;
+}
+
+.skeleton-info {
+  padding: 12px;
+}
+
+.skeleton-title {
+  height: 14px;
+  width: 80%;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background: #222;
+}
+
+.skeleton-subtitle {
+  height: 10px;
+  width: 40%;
+  border-radius: 6px;
+  background: #222;
+}
+
+/* ✨ Shimmer animation */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}

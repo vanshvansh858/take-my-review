@@ -22,8 +22,6 @@ function Trailer() {
         const trailer = data.results.find(
           video => video.type === "Trailer" && video.site === "YouTube"
         );
-        console.log(trailer)
-
         setTrailerKey(trailer ? trailer.key : null);
       } catch (err) {
         console.error(err);
@@ -34,7 +32,7 @@ function Trailer() {
     }
 
     getTrailer();
-  }, [id, setLoading]);
+  }, [id]);
 
   return (
     <div className="trailer-page">
@@ -44,9 +42,11 @@ function Trailer() {
           <LoadingSkeleton />
         </>
       ) : trailerKey ? (
-        <iframe className="trailer-frame"
+        <iframe
+          className="trailer-frame"
           src={`https://www.youtube.com/embed/${trailerKey}`}
           title="Movie Trailer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
       ) : (
         <p>No trailer available</p>
